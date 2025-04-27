@@ -32,8 +32,6 @@ const humidityBox = document.createElement('div')
 humidityBox.setAttribute('id', 'humidity-box')
 const humidityIcon = document.createElement('img')
 humidityIcon.src = "./img/humidity-icon.png"
-humidityIcon.style.width = "64px"
-humidityIcon.style.height = "64px"
 const humidityVal = document.createElement('span')
 humidityVal.innerHTML = `${data.current.humidity}% <br> Humidity`
 humidityBox.append(humidityIcon,humidityVal)
@@ -41,8 +39,6 @@ const windBox = document.createElement('div')
 windBox.setAttribute('id', 'wind-box')
 const windIcon = document.createElement('img')
 windIcon.src = "./img/wind-icon.png"
-windIcon.style.width = "64px"
-windIcon.style.height = "64px"
 const windVal = document.createElement('span')
 windVal.innerHTML = `${data.current.wind_kph} km/h <br> Wind`
 windBox.append(windIcon, windVal)
@@ -53,3 +49,8 @@ inputElement.value = ""
 
 showBtn.addEventListener('click', showContent)
 
+inputElement.addEventListener('keydown', e => {
+    if(e.key === "Enter"){
+        showContent()
+    }
+})
